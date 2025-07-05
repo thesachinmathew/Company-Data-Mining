@@ -40,6 +40,7 @@ for company in company_names:
     data = {"cd": "company", "searchvalue": company}
     response = requests.post(url, headers=headers, data=data, verify=False)
 
+    
     soup = BeautifulSoup(response.text, "html.parser")
     if "records" not in soup.prettify():
         current_datetime = datetime.now()
